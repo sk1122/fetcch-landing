@@ -1,9 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Header, Hero, Social, Footer } from "../components/"
+import { useState } from 'react'
+import { Header, Hero, Social, Footer, Form } from "../components/"
 
 const Home: NextPage = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
     <div className="flex min-h-screen flex-col items-center justify-center">
       <Head>
@@ -16,12 +19,14 @@ const Home: NextPage = () => {
           <source src="/bg.webm" type="video/webm" />
         </video>
         <Header />
-        <Hero />
+        <Hero isOpen={isOpen} setIsOpen={setIsOpen} />
         <div className='absolute right-5 bottom-20'>
           <Social />
         </div>
+        <Form isOpen={isOpen} setIsOpen={setIsOpen} />
       </main>
       <Footer />
+
     </div>
   )
 }

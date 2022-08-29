@@ -1,6 +1,6 @@
 import React, { MouseEventHandler } from "react"
 
-export interface IProps {
+interface IProps {
     onClick?: MouseEventHandler<any>
     arrow?: boolean
     invert?: boolean

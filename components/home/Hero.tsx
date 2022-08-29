@@ -1,11 +1,21 @@
 import React, { useState } from "react"
-import { Button } from "../shared"
+import { Button, Form } from "../shared"
 
-export const Hero = () => {
-    const [isOpen, setIsOpen] = useState(false)
+interface IProps {
+    isOpen: boolean
+    setIsOpen: Function
+}
+
+export const Hero = ({ isOpen, setIsOpen }: IProps) => {
+
+    const setFalse = () => {
+        if(isOpen) {
+            setIsOpen(false)
+        }
+    }
 
     return (
-        <div className="w-full min-h-screen flex flex-col justify-center items-center space-y-8">
+        <div className="w-full min-h-screen flex flex-col justify-center items-center space-y-8" onClick={() => setFalse()}>
             <div className="relative font-bold font-prompt text-white">
                 <img src="/images/star.png" className="w-6 h-6 lg:w-12 lg:h-12 absolute -top-5 left-0 2xl:-top-8 2xl:-left-8" />
                 <h1 className="text-4xl md:text-6xl lg:text-8xl text-center">Making the most complex part of <br /> <span className="text-[#FDB658]">Web3</span> <span className="text-[#FF5D46]">“Simple”</span></h1>
