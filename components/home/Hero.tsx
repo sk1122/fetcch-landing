@@ -1,7 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import { Button } from "../shared"
 
 export const Hero = () => {
+    const [isOpen, setIsOpen] = useState(false)
+
     return (
         <div className="w-full min-h-screen flex flex-col justify-center items-center space-y-8">
             <div className="relative font-bold font-prompt text-white">
@@ -11,7 +13,7 @@ export const Hero = () => {
                 <img src="/images/highlight-line.png" alt="" className="absolute w-10 h-10 lg:w-20 lg:h-20 bottom-0 left-0 lg:left-1/4" />
             </div>
             <p className="font-prompt z-50 font-light text-xl lg:text-2xl w-full lg:w-2/3 text-slate-400">The infra to achieve cross-chain user experience without bridges + faster and cheeper by using diffrent communication infrastructure</p>
-            <Button arrow={true} />
+            <Button arrow={true} onClick={() => setIsOpen(true)} />
         </div>
     )
 }

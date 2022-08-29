@@ -1,9 +1,9 @@
 import React, { MouseEventHandler } from "react"
 
 export interface IProps {
-    onClick: MouseEventHandler<any>
-    arrow: boolean
-    invert: boolean
+    onClick?: MouseEventHandler<any>
+    arrow?: boolean
+    invert?: boolean
 }
 
 export const Button = ({ onClick, arrow = false, invert = false }: IProps) => {
